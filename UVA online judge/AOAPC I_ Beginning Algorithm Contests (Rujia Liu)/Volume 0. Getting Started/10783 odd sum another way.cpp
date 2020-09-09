@@ -1,20 +1,23 @@
 #include <iostream>
 #include <cstdio>
+
 using namespace std;
 int main()
 {
-    int T, sum, c=0, i, a, b;
+    int T, i, sum, c=0, a, b;
     scanf("%d", &T);
     while(T--)
     {
         sum = 0;
         c++;
         scanf("%d %d", &a, &b);
-        for(i=a; i<=b; i++)
+        if(a%2 == 0)
+            a = a+1;
+        for(i=a; i<=b; i+=2)
         {
-            if(i%2 != 0)
-                sum = sum + i;
+            sum = sum + i;
         }
         printf("Case %d: %d\n", c, sum);
     }
+    return 0;
 }
